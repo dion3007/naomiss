@@ -1,0 +1,80 @@
+{
+  "id": 12312,
+  "result": [
+    {
+      "id": 12,
+      "name": "All",
+      "flag": true
+    },
+    {
+      "id": 18,
+      "name": "Deliveries",
+      "flag": false
+    },
+    {
+      "id": 14,
+      "name": "Expenses",
+      "flag": false
+    },
+    {
+      "id": 16,
+      "name": "Handling Fee",
+      "flag": false
+    },
+    {
+      "id": 17,
+      "name": "Logistic Fee",
+      "flag": false
+    },
+    {
+      "id": 15,
+      "name": "Processing Fee",
+      "flag": false
+    },
+    {
+      "id": 13,
+      "name": "Saleable",
+      "flag": false
+    },
+    {
+      "id": 10,
+      "name": "Cumi-cumi",
+      "flag": true
+    },
+    {
+      "id": 11,
+      "name": "Gurita",
+      "flag": true
+    },
+    {
+      "id": 5,
+      "name": "Ikan Dasar",
+      "flag": true
+    },
+    {
+      "id": 7,
+      "name": "Ikan Pelagis",
+      "flag": true
+    },
+    {
+      "id": 4,
+      "name": "Kepiting",
+      "flag": true
+    },
+    {
+      "id": 9,
+      "name": "Rajungan",
+      "flag": true
+    },
+    {
+      "id": 6,
+      "name": "Lobster",
+      "flag": true
+    },
+    {
+      "id": 8,
+      "name": "Udang",
+      "flag": true
+    }
+  ]
+}

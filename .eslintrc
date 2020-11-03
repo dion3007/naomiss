@@ -1,0 +1,15 @@
+{
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "sourceType": "module",
+    "allowImportExportEverywhere": false,
+    "codeFrame": false
+  },
+  "extends": ["airbnb", "prettier"],
+  "plugins": ["react", "prettier"],
+  "env": { "browser": true, "jest": true },
+  "rules": {
+    "react/jsx-props-no-spreading": "off",
+    "react/prop-types": [0, {}]
+  }
+}

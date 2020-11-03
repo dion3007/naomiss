@@ -1,0 +1,37 @@
+default:
+  image: node:12
+  before_script:
+    - yarn
+
+lint:
+  script:
+    - yarn lint
+  only:
+    - master
+    - merge_requests
+
+check_format:
+  script:
+    - yarn check-format
+  only:
+    - master
+    - merge_requests
+
+unitTests:
+  only:
+    - merge_requests
+  script:
+    - yarn test
+
+coverageTests:
+  only:
+    - master
+  script:
+    - yarn test:coverage
+
+build:
+  script:
+    - yarn build
+  only:
+    - master
+    - merge_requests

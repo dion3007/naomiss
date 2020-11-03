@@ -1,0 +1,273 @@
+@import url('https://use.typekit.net/xxl1wsy.css');
+
+body {
+  overflow-x: hidden;
+  font-family: 'muli', sans-serif !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+p {
+  font-family: 'muli', sans-serif !important;
+}
+
+img {
+  object-fit: cover;
+}
+
+.chip:focus,
+.chip:hover {
+  background-color: #008ce6 !important;
+  color: #ffffff !important;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+a:link {
+  text-decoration: none;
+  color: #000000;
+}
+
+a:visited {
+  text-decoration: none;
+  color: #000000;
+}
+
+.alignItemsCenter {
+  align-items: center !important;
+}
+
+.clickAble {
+  cursor: pointer;
+}
+
+.greyFooterLink {
+  color: #545454;
+}
+
+.elipsisText {
+  white-space: break-spaces;
+  width: 100%;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-bottom: 5px;
+  color: #969696;
+}
+
+.capitalize {
+  text-transform: capitalize !important;
+}
+
+.orange {
+  color: #f37125 !important;
+}
+
+.redRequired {
+  color: #f33325 !important;
+}
+
+.greyMockup {
+  color: #bdbdbd;
+}
+
+.bgorange {
+  background-color: #f37125 !important;
+}
+
+.alignEnd {
+  align-items: end !important;
+}
+
+.marginTopBottom16 {
+  margin: 16px 0;
+}
+
+/* Grid */
+
+.gridFive {
+  margin-right: 46px !important;
+}
+
+.gridFooterMargin {
+  margin-right: 60px;
+}
+
+/* side Category on product style */
+
+.widthSideBar {
+  width: 95%;
+  border: 2px solid #e4e4e4;
+  box-shadow: none !important;
+  border-radius: 6px !important;
+  margin-right: 1% !important;
+  height: fit-content;
+}
+
+.widthDivText {
+  width: 25% !important;
+}
+
+/* product List */
+
+.boxProduct {
+  padding: 10px;
+  margin-top: 2%;
+  box-shadow: none !important;
+  border: 2px solid #e4e4e4;
+}
+
+/* display */
+
+.flex {
+  display: flex;
+}
+
+.justifyCenter {
+  justify-content: center;
+}
+
+.spaceBetween {
+  justify-content: space-between;
+}
+
+.responsiveHide {
+  display: none !important;
+}
+
+.widthTitleAttribute {
+  width: 20%;
+}
+/* breadcrumbs */
+
+.breadcrumbsDiv {
+  background: #ffffff;
+  position: absolute;
+  padding: 10px 15px;
+  margin-top: -26px;
+  mix-blend-mode: normal;
+  box-shadow: 4px 5px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 6px;
+}
+
+.breadcrumbsDivDetail {
+  background: #ffffff;
+  padding: 10px 15px;
+  margin-left: 2%;
+  width: fit-content;
+  margin-top: 90px;
+  mix-blend-mode: normal;
+  box-shadow: 4px 5px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 6px;
+}
+
+/* cart */
+
+.formWidthCartResponsive {
+  width: 75%;
+}
+
+@media only screen and (max-width: 1200px) {
+  .widthDivText {
+    width: 35% !important;
+  }
+}
+
+@media only screen and (max-width: 960px) {
+  .scrollHide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    background-position: left center, right center, left center, right center;
+    background-repeat: no-repeat;
+    background-color: white;
+    background-size: 20px 100%, 20px 100%, 40px 100%, 50px 100%;
+    background-attachment: local, local, scroll, scroll;
+    display: flex;
+    margin-top: 5%;
+  }
+}
+
+@media only screen and (max-width: 769px) {
+  .responsiveTextAlignCenter {
+    text-align: center;
+  }
+  .elipsisText {
+    width: 100% !important;
+  }
+  .responsiveTextAlign {
+    text-align: center;
+  }
+  .responsiveCenter {
+    justify-content: center;
+  }
+  .hide {
+    display: none;
+  }
+  .widthContent {
+    width: 100% !important;
+  }
+  .responsiveList {
+    width: 100% !important;
+  }
+  .widthDivText {
+    width: 100% !important;
+  }
+  .gridFooterMargin {
+    margin: 0px;
+  }
+  .titleFont {
+    font-size: 2rem !important;
+    margin-bottom: 1rem !important;
+  }
+  .formWidthCartResponsive {
+    width: 100%;
+  }
+
+  /* scrollbar */
+  .scrollHide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scrollHide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    background-position: left center, right center, left center, right center;
+    background-repeat: no-repeat;
+    background-color: white;
+    background-size: 20px 100%, 20px 100%, 40px 100%, 50px 100%;
+    background-attachment: local, local, scroll, scroll;
+    display: flex;
+  }
+
+  .responsiveHide {
+    display: flex !important;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .flex {
+    display: flex;
+  }
+  .responsiveProductImage {
+    width: 100% !important;
+  }
+  .breadcrumbsDivDetail {
+    display: none;
+  }
+}

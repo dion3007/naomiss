@@ -1,0 +1,95 @@
+{
+  "id": 12312,
+  "result": [
+    {
+      "id": 12,
+      "name": "All",
+      "flag": false,
+      "images": "https://drive.google.com/file/d/1uKH3Qqk90qvv-1A4eXl2QY-HzSsDW_Xm/view?usp=sharing"
+    },
+    {
+      "id": 18,
+      "name": "Deliveries",
+      "flag": false,
+      "images": "https://drive.google.com/file/d/1uKH3Qqk90qvv-1A4eXl2QY-HzSsDW_Xm/view?usp=sharing"
+    },
+    {
+      "id": 14,
+      "name": "Expenses",
+      "flag": false,
+      "images": "https://drive.google.com/file/d/1uKH3Qqk90qvv-1A4eXl2QY-HzSsDW_Xm/view?usp=sharing"
+    },
+    {
+      "id": 16,
+      "name": "Handling Fee",
+      "flag": false,
+      "images": "https://drive.google.com/file/d/1uKH3Qqk90qvv-1A4eXl2QY-HzSsDW_Xm/view?usp=sharing"
+    },
+    {
+      "id": 17,
+      "name": "Logistic Fee",
+      "flag": false,
+      "images": "https://drive.google.com/file/d/1uKH3Qqk90qvv-1A4eXl2QY-HzSsDW_Xm/view?usp=sharing"
+    },
+    {
+      "id": 15,
+      "name": "Processing Fee",
+      "flag": false,
+      "images": "https://drive.google.com/file/d/1uKH3Qqk90qvv-1A4eXl2QY-HzSsDW_Xm/view?usp=sharing"
+    },
+    {
+      "id": 13,
+      "name": "Saleable",
+      "flag": false,
+      "images": "https://drive.google.com/file/d/1uKH3Qqk90qvv-1A4eXl2QY-HzSsDW_Xm/view?usp=sharing"
+    },
+    {
+      "id": 10,
+      "name": "Cumi-cumi",
+      "flag": true,
+      "images": "https://www.linkpicture.com/q/productcategorycumi-cumi.png"
+    },
+    {
+      "id": 11,
+      "name": "Gurita",
+      "flag": true,
+      "images": "https://www.linkpicture.com/q/productcategorygurita.png"
+    },
+    {
+      "id": 5,
+      "name": "Ikan Dasar",
+      "flag": true,
+      "images": "https://www.linkpicture.com/q/productcategoryIkanDasar_Demersal.png"
+    },
+    {
+      "id": 7,
+      "name": "Ikan Pelagis",
+      "flag": true,
+      "images": "https://i.ibb.co/pWzKf3s/product-category-Pelagic-1.png"
+    },
+    {
+      "id": 4,
+      "name": "Kepiting",
+      "flag": true,
+      "images": "https://i.ibb.co/svY2f5k/product-categorykepiting.png"
+    },
+    {
+      "id": 9,
+      "name": "Rajungan",
+      "flag": true,
+      "images": "https://i.ibb.co/svY2f5k/product-categorykepiting.png"
+    },
+    {
+      "id": 6,
+      "name": "Lobster",
+      "flag": true,
+      "images": "https://www.linkpicture.com/q/productcategoryLobster.png"
+    },
+    {
+      "id": 8,
+      "name": "Udang",
+      "flag": true,
+      "images": "https://www.linkpicture.com/q/productcategoryUdang.png"
+    }
+  ]
+}
