@@ -30,6 +30,7 @@ import {
 import Header from '../components/header'
 import Body from '../components/body'
 import DialogInquiry from '../components/dialoginquiry'
+import DialogDelete from '../components/dialogdelete'
 import css from '../public/style.css'
 import Footer from '../components/footer'
 
@@ -274,7 +275,6 @@ const Cart = ({
       qtyValidation.length === cartLength &&
       notesValidation.length === cartLength &&
       form.name !== '' &&
-      form.postCode > 0 &&
       emailForm !== '' &&
       phoneForm !== '' &&
       form.country !== '' &&
@@ -320,7 +320,6 @@ const Cart = ({
       qtyValidation.length === cartLength &&
       notesValidation.length === cartLength &&
       form.name !== '' &&
-      form.postCode > 0 &&
       emailForm !== '' &&
       phoneForm !== '' &&
       form.country !== '' &&
@@ -364,20 +363,7 @@ const Cart = ({
         postCode: 'fill by valid numbers',
       })
       setButDisable()
-    } else if (
-      qtyValidation.length === cartLength &&
-      notesValidation.length === cartLength &&
-      e.target.value !== '' &&
-      form.postCode > 0 &&
-      form.name !== '' &&
-      form.country !== '' &&
-      form.city !== '' &&
-      form.address !== '' &&
-      emailForm !== '' &&
-      phoneForm !== '' &&
-      validateEmail(emailForm) &&
-      validatePhone(phoneForm)
-    ) {
+    } else if (form.postCode > 0) {
       setError({
         ...error,
         [e.target.name]: false,
@@ -386,7 +372,6 @@ const Cart = ({
         ...errorMsg,
         [e.target.name]: '',
       })
-      setButDisableFalse()
     }
   }
 
@@ -429,6 +414,15 @@ const Cart = ({
         [e.target.name]: '',
       })
       setButDisableFalse()
+    } else if (form.postCode > 0) {
+      setError({
+        ...error,
+        [e.target.name]: false,
+      })
+      setErrorMsg({
+        ...errorMsg,
+        [e.target.name]: '',
+      })
     } else {
       setError({
         ...error,
@@ -486,7 +480,7 @@ const Cart = ({
                           variant="h6"
                           className={`${classes.title} ${classes.marginBottom10}`}
                         >
-                          Inquiry List
+                          Order List
                         </Typography>
                         <span>
                           {cartData.map((res) => {
@@ -533,6 +527,7 @@ const Cart = ({
                                       type="number"
                                       placeholder={res.qty || '1'}
                                       name="qty"
+                                      defaultValue={res.qty}
                                       onChange={
                                         (e) =>
                                           updatePropsValidation(
@@ -559,7 +554,7 @@ const Cart = ({
                                   <Typography
                                     className={`${classes.title} ${classes.marginBottom10}`}
                                   >
-                                    Detail Product
+                                    Specification
                                     <span className={css.redRequired}>*</span>
                                   </Typography>
                                   <TextField
@@ -567,6 +562,7 @@ const Cart = ({
                                     variant="outlined"
                                     fullWidth
                                     name={`notes-${res.product_id}`}
+                                    defaultValue={res.notes}
                                     placeholder={
                                       res.notes ||
                                       'Enter product details such as color, size, materials etc. and other specification requirements to receive an accurate quote.'
@@ -594,26 +590,6 @@ const Cart = ({
                               </Paper>
                             )
                           })}
-                          <div className={`${classes.marginBottom20} ${classes.marginTop20}`}>
-                            <Typography
-                              variant="h6"
-                              className={`${classes.title} ${classes.marginBottom10}`}
-                            >
-                              Add Note
-                            </Typography>
-                            <TextField
-                              id="outlined-notes"
-                              placeholder="You can add notes for products that are not in our catalog"
-                              name="notes"
-                              value={form.notes}
-                              onChange={updateFieldWithoutValidation}
-                              onKeyUp={updateFieldWithoutValidation}
-                              variant="outlined"
-                              fullWidth
-                              multiline
-                              rows={4}
-                            />
-                          </div>
                         </span>
                         <ScrollTop>
                           <div className={`${classes.center} ${classes.fixedPosition}`}>
@@ -624,7 +600,7 @@ const Cart = ({
                               disabled={nextButtonDisabled}
                               onClick={() => handleTab('inquiryForm')}
                             >
-                              <Typography className={css.capitalize}>Next</Typography>
+                              <Typography className={css.capitalize}>Checkout</Typography>
                             </Button>
                             <Link route="/" href>
                               <Button
@@ -646,7 +622,7 @@ const Cart = ({
                             disabled={nextButtonDisabled}
                             onClick={() => handleTab('inquiryForm')}
                           >
-                            <Typography className={css.capitalize}>Next</Typography>
+                            <Typography className={css.capitalize}>Checkout</Typography>
                           </Button>
                           <Link route="/" href>
                             <Button
@@ -839,6 +815,26 @@ const Cart = ({
                             rows={4}
                           />
                         </div>
+                        <div className={`${classes.marginBottom20} ${classes.marginTop20}`}>
+                          <Typography
+                            variant="h6"
+                            className={`${classes.title} ${classes.marginBottom10}`}
+                          >
+                            Add Note
+                          </Typography>
+                          <TextField
+                            id="outlined-notes"
+                            placeholder="You can add notes for products that are not in our catalog"
+                            name="notes"
+                            value={form.notes}
+                            onChange={updateFieldWithoutValidation}
+                            onKeyUp={updateFieldWithoutValidation}
+                            variant="outlined"
+                            fullWidth
+                            multiline
+                            rows={4}
+                          />
+                        </div>
                         <ScrollTop>
                           <div className={`${classes.center} ${classes.fixedPosition}`}>
                             <Button
@@ -880,11 +876,20 @@ const Cart = ({
                       </TabPanel>
                     </>
                   ) : (
-                    <span>
-                      <Typography className={`${classes.marginBottom20}`}>
+                    <div style={{textAlign: 'center', marginTop: '60%'}}>
+                      <img
+                        src="/images/noCart.webp"
+                        alt="no Product in this Cart"
+                        width="260"
+                        className={`${classes.marginBottom10}`}
+                      />
+                      <Typography
+                        className={`${classes.marginBottom20}`}
+                        style={{textAlign: 'center'}}
+                      >
                         Your order list is still empty....
                       </Typography>
-                      <div className={classes.fixedPosition}>
+                      <div>
                         <Link route="/" href>
                           <Button
                             variant="outlined"
@@ -898,7 +903,7 @@ const Cart = ({
                           </Button>
                         </Link>
                       </div>
-                    </span>
+                    </div>
                   )}
                 </>
               ) : (
@@ -1088,7 +1093,7 @@ const Cart = ({
                         variant="h6"
                         className={`${classes.title} ${classes.marginBottom20}`}
                       >
-                        Inquiry List
+                        Order List
                       </Typography>
                       {cartData !== null && cartData.length !== 0 ? (
                         <span>
@@ -1162,7 +1167,7 @@ const Cart = ({
                                   <Typography
                                     className={`${classes.title} ${classes.marginBottom10}`}
                                   >
-                                    Detail Product
+                                    Specification
                                     <span className={css.redRequired}>*</span>
                                   </Typography>
                                   <TextField
@@ -1236,10 +1241,7 @@ const Cart = ({
                           </Typography>
                           <Link route="/" href>
                             <Button variant="outlined" className={classes.btnBlueOutline}>
-                              <Typography
-                                variant="h6"
-                                className={`${classes.blue} ${css.capitalize}`}
-                              >
+                              <Typography className={`${classes.blue} ${css.capitalize}`}>
                                 Browse our product categories
                               </Typography>
                             </Button>
@@ -1254,10 +1256,12 @@ const Cart = ({
               <DialogInquiry
                 text="Inquiry has been sent successfully to"
                 email={emailForm}
-                bool={boolnotify || deleteBool}
+                bool={boolnotify}
                 closeCart={exitInquiry}
-                closeDeleteCart={exitDialogDelete}
-                isDelete={deleteBool}
+              />
+              <DialogDelete
+                bool={deleteBool}
+                closeCart={exitDialogDelete}
                 deleteFunction={() => delThisCart(idDeleteProduct)}
               />
             </div>
