@@ -387,6 +387,15 @@ const Cart = ({
         [e.target.name]: '',
       })
       setButDisable()
+    } else {
+      setError({
+        ...error,
+        [e.target.name]: false,
+      })
+      setErrorMsg({
+        ...errorMsg,
+        [e.target.name]: '',
+      })
     }
   }
 
