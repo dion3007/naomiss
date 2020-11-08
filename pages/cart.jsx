@@ -363,7 +363,21 @@ const Cart = ({
         postCode: 'fill by valid numbers',
       })
       setButDisable()
-    } else if (form.postCode > 0) {
+    } else if (
+      form.postCode > 0 &&
+      qtyValidation.length === cartLength &&
+      notesValidation.length === cartLength &&
+      e.target.value !== '' &&
+      form.postCode > 0 &&
+      form.name !== '' &&
+      form.country !== '' &&
+      form.city !== '' &&
+      form.address !== '' &&
+      emailForm !== '' &&
+      phoneForm !== '' &&
+      validateEmail(emailForm) &&
+      validatePhone(phoneForm)
+    ) {
       setError({
         ...error,
         [e.target.name]: false,
@@ -372,6 +386,7 @@ const Cart = ({
         ...errorMsg,
         [e.target.name]: '',
       })
+      setButDisable()
     }
   }
 
