@@ -9,10 +9,7 @@ describe('DialogInquiry', () => {
         text="Inquiry has been sent successfully"
         email="testbla@gmail.com"
         bool
-        isDelete
         closeCart={() => {}}
-        deleteFunction={() => {}}
-        closeDeleteCart={() => {}}
       />,
     )
 

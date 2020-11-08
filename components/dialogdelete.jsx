@@ -4,7 +4,6 @@ import PropTypes from 'prop-types'
 import Dialog from '@material-ui/core/Dialog'
 import MuiDialogContent from '@material-ui/core/DialogContent'
 import {Typography, Button} from '@material-ui/core'
-import {Link} from '../routes'
 import css from '../public/style.css'
 
 const useStyles = makeStyles(() => ({
@@ -16,15 +15,9 @@ const useStyles = makeStyles(() => ({
   marginBottom: {
     marginBottom: 20,
   },
-  btnColor: {
-    backgroundColor: 'transparent',
-  },
   center: {
     alignSelf: 'center',
     textAlign: 'center',
-  },
-  bold: {
-    fontWeight: 700,
   },
 }))
 
@@ -34,9 +27,13 @@ const DialogContent = withStyles((theme) => ({
   },
 }))(MuiDialogContent)
 
-export default function DialogInquiry({text, email, bool, closeCart: exitCart}) {
+export default function DialogDelete({bool, closeCart: exitCart, deleteFunction: deleteCart}) {
   const classes = useStyles()
   const handleClose = () => {
+    exitCart()
+  }
+  const handleDelete = () => {
+    deleteCart()
     exitCart()
   }
   return (
@@ -52,17 +49,19 @@ export default function DialogInquiry({text, email, bool, closeCart: exitCart}) 
         <DialogContent>
           <div className={classes.center}>
             <Typography className={classes.marginBottom}>
-              {`${text} `}
-              <span className={classes.bold}>{email}</span>
+              Are you sure you want to remove this product ?
             </Typography>
-            <Typography>We will contact you within 1x24 hours on workdays.</Typography>
-            <Link route="/" href>
-              <Button className={classes.btnColor} onClick={handleClose} fullWidth>
-                <Typography variant="h6" className={`${css.orange} ${css.capitalize}`}>
-                  Back to Product Category
-                </Typography>
-              </Button>
-            </Link>
+            <Button
+              variant="contained"
+              size="small"
+              color="primary"
+              onClick={handleDelete}
+              fullWidth
+            >
+              <Typography variant="h6" className={`${css.capitalize}`}>
+                Yes, Delete Seafood
+              </Typography>
+            </Button>
           </div>
         </DialogContent>
       </Dialog>
@@ -70,9 +69,8 @@ export default function DialogInquiry({text, email, bool, closeCart: exitCart}) 
   )
 }
 
-DialogInquiry.propTypes = {
-  text: PropTypes.string.isRequired,
-  email: PropTypes.string.isRequired,
+DialogDelete.propTypes = {
   bool: PropTypes.bool.isRequired,
   closeCart: PropTypes.func.isRequired,
+  deleteFunction: PropTypes.func.isRequired,
 }

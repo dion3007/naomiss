@@ -91,7 +91,7 @@ const Detail = ({
     if (product === null && pid !== undefined) {
       getProdDet(pid)
       getCatDet(cat)
-    } else if (product !== null && product.id !== pid) {
+    } else if (product && product.id !== pid) {
       getProdDet(pid)
       getCatDet(cat)
     }
